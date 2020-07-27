@@ -32,6 +32,6 @@
 
 ### 스크린샷
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d03b377-9f03-4aad-8f55-4a04dbf55eaa/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/2d03b377-9f03-4aad-8f55-4a04dbf55eaa/Untitled.png)
+![](./ilovschool.png)
 
 
