@@ -45,10 +45,10 @@
 2. 로그인 후 화면 <br/>
 <img src="/images/main.png" width="850" height="500">
 
-3. 가입진행 화면1 <br/>
+3. 정보 입력 화면1 <br/>
 <img src="/images/signup1.png" width="850" height="500">
 
-4. 가입진행 화면2 <br/>
+4. 정보 입력 화면2 <br/>
 <img src="/images/signup2.png" width="850" height="500">
 
 5. 채팅화면 <br/>
