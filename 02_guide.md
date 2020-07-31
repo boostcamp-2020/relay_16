@@ -1,4 +1,4 @@
-<img src="/imges/logo.png" width="300" height="300">
+<img src="/images/logo.png" width="300" height="300">
 
 # [Relay16] "응답하라!! 그때 우리!!" 기획 가이드
 <br/>
