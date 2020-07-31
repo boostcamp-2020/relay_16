@@ -40,16 +40,12 @@
 
 ## 와이어프레임
 1. 메인화면 <br/>
-![메인화면](./images/index.html.png)
-
+<img src="/images/index.html.png" width="700" height="500">
 2. 로그인 후 화면 <br/>
-![로그인 후 화면](./images/main.png)
-
+<img src="/images/main.png" width="700" height="500">
 3. 가입진행 화면1 <br/>
-![가입화면1](./images/signup1.png)
-
+<img src="/images/signup1.png" width="700" height="500">
 4. 가입진행 화면2 <br/>
-![가입화면2](./images/signup2.png)
-
+<img src="/images/signup2.png" width="700" height="500">
 5. 채팅화면 <br/>
-![채팅화면](./images/chat.png)
+<img src="/images/chat.png" width="700" height="500">
