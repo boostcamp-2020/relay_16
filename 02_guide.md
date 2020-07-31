@@ -43,19 +43,19 @@ J188 정지찬 | J189 조민재 | J190 조병건 | J191 조상연 | J192 조정�
 
 ## 와이어프레임
 1. 메인화면 <br/>
-<img src="/images/index.html.png" width="850" height="500">
+<img src="/images/index.html.png" width="900" height="500">
 
 2. 로그인 후 화면 <br/>
-<img src="/images/main.png" width="850" height="500">
+<img src="/images/main.png" width="900" height="500">
 
 3. 정보 입력 화면1 <br/>
-<img src="/images/signup1.png" width="850" height="500">
+<img src="/images/signup1.png" width="900" height="500">
 
 4. 정보 입력 화면2 <br/>
-<img src="/images/signup2.png" width="850" height="500">
+<img src="/images/signup2.png" width="900" height="500">
 
 5. 채팅화면 <br/>
-<img src="/images/chat.png" width="850" height="500">
+<img src="/images/chat.png" width="900" height="500">
 
 ## 시스템 설계도
 <img src="/images/시스템 설계도.png">
