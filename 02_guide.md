@@ -1,5 +1,8 @@
-![로고](./images/logo.png){: width="200" height="200"}
+<img src="/imges/logo.png" width="300" height="300">
+
 # [Relay16] "응답하라!! 그때 우리!!" 기획 가이드
+<br/>
+<br/>
 
 ## 서비스 기획 및 정의
 본 프로젝트는 "아이러브스쿨"에서 감명을 받아 시작된 것입니다.
