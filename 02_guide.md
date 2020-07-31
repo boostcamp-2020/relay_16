@@ -53,3 +53,10 @@
 
 5. 채팅화면 <br/>
 <img src="/images/chat.png" width="850" height="500">
+
+## 시스템 설계도
+<img src="/images/사용자 흐름도.png">
+
+## 사용자 흐름도
+<img src="/images/시스템 설계도.png">
+
