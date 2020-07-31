@@ -33,11 +33,23 @@
 공감, 동조의 어조가 나오는 KEYWORD를 뽑아낸다.
 → 의미있다고 생각하는 부류의 KEYWORD로 변경해도 됩니다 <br/>
 
+<br/>
 
-##와이어프레임
+## 와이어프레임
+1. 로고
 ![로고](./images/logo.png)
+
+2. 메인화면
 ![메인화면](./images/index.html.png)
+
+3. 로그인 후 화면
 ![로그인 후 화면](./images/main.png)
+
+4. 가입진행 화면1
 ![가입화면1](./images/signup1.png)
+
+5. 가입진행 화면2
 ![가입화면2](./images/signup2.png)
+
+6. 채팅화면
 ![채팅화면](./images/chat.png)
