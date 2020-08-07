@@ -2,11 +2,8 @@
 const {
     user
   } = require('../../../sequelize/models')
- 
-
   module.exports = function (req, res) {
-      console.log(req.body)
-      console.log(req.header)
+      //insert
     user.create({
       ...req.body,
     }).then(results => {

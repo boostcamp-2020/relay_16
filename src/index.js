@@ -11,6 +11,14 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 require('./routes')(app)
+app.set("view engine","ejs")
+app.set("views","../front")
+app.engine('html', require('ejs').renderFile);
 
-
+app.get('/',function(req,res){
+    res.render('main.html')
+})
+app.get('/chat.html',function(req,res){
+    res.render('chat.html')
+})
 module.exports = app;
