@@ -78,6 +78,7 @@ $(function () {
 	});
 
 	$(".my-login-validation").submit(function () {
+		location.href="chat.html";
 		event.preventDefault();
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
@@ -94,7 +95,7 @@ $(function () {
 				if(response != null) {
 					// 로그인 성공
 					localStorage.setItem('token', response);
-					location.href="char.html";
+					location.href="chat.html";
 				}
 				else {
 					// 로그인 실패
