@@ -3,6 +3,6 @@ const {Router} = require('express')
 const router = Router()
 const service = require('./service')
 
-router.get('/test',service.getTest)
-
+router.get('/user/:userId',service.getUser)
+router.post('/user',service.addUser)
 module.exports = router
