@@ -78,12 +78,12 @@ $(function () {
 	});
 
 	$(".my-login-validation").submit(function () {
-		location.href="chat.html";
 		event.preventDefault();
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
 		const data = { "email": email, "password": password };
 		const url = 'http://localhost:3000';
+		
 		fetch(`${url}/login`, {
 			method: 'POST',
 			body: JSON.stringify(data),
@@ -95,10 +95,10 @@ $(function () {
 				if(response != null) {
 					// 로그인 성공
 					localStorage.setItem('token', response);
-					location.href="chat.html";
+					location.href="main.html";
 				}
 				else {
-					// 로그인 실패
+					alert("아이디 혹은 패스워드가 일치하지 않습니다.")
 				}
 			});
 	});
