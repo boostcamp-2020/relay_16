@@ -52,7 +52,7 @@
 		const url = 'http://localhost:3000';
 		const token = localStorage.getItem('token');
 
-		fetch(`${url}/:${token}`, {
+		fetch(`${url}/users/:${token}`, {
 			method: 'GET',
 			headers: {
 				'Content-Type': 'application/json'
@@ -60,7 +60,7 @@
 		}).then(response => response.json())
 			.then(response => {
 				userName.innerHTML = `
-					${response.name}님 안녕하세요!
+					${response.message.user_name}님 안녕하세요!
 				`;
 			});
 		

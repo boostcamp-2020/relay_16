@@ -81,7 +81,7 @@ $(function () {
 		event.preventDefault();
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
-		const data = { "email": email, "password": password };
+		const data = { user_id: email, user_pwd: password };
 		const url = 'http://localhost:3000';
 		
 		fetch(`${url}/login`, {
@@ -92,7 +92,7 @@ $(function () {
 			}
 		}).then(response => response.json())
 			.then(response => {
-				if(response != null) {
+				if(response.data !== null) {
 					// 로그인 성공
 					localStorage.setItem('token', response);
 					location.href="main.html";

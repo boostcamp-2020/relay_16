@@ -62,7 +62,7 @@
     		const url = 'http://localhost:3000';
         const token = localStorage.getItem('token');
 
-        fetch(`${url}/:${token}`, {
+        fetch(`${url}/users/:${token}`, {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json'
