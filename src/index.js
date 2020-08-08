@@ -18,7 +18,22 @@ app.engine('html', require('ejs').renderFile);
 app.get('/',function(req,res){
     res.render('main.html')
 })
-app.get('/chat.html',function(req,res){
-    res.render('chat.html')
+
+// 채팅서버 작업부분
+app.use('/css', express.static('../front/css'))
+app.use('/js', express.static('../front/js'))
+const chat = require('./routes/chat/index');
+app.use('/chat', chat);
+
+/* Node.js 기본 내장 모듈 불러오기 */
+const http = require('http')
+var server = http.createServer(app);
+
+var io = require('socket.io')(server);  // 8080포트에 소켓 연동
+server.listen(8080, function() {
+    console.log('서버 실행 중..')
 })
+
+require('./libs/socketConnection')(io);
+
 module.exports = app;
