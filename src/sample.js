@@ -4,17 +4,19 @@ const {
 } = require('./sequelize/models') // relay16/src/sequelize/model/index.js 
 
 
+console.log(process.env.SQL_PASSWORD)
 // 유저 삽입
 // user.create({
-//     id: "jk",
-//     nickname: "김정",
-//     password: "relay16"
+//     id: "honux",
+//     nickname: "호눅스는호눅스하고울지",
+//     password: "honux"
 // }).then(results => {
 //     console.dir("RESULT =" + results) //결과 받아와서 동작
 // }).catch(err => {
 //     console.log("ERR = " + err)
 // })
 
+// //수정
 // user.update({
 //     //바꿀 데이터,
 //     job: "가수",

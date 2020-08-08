@@ -1,12 +1,12 @@
-const dotenv = require('dotenv');
-const path = require('path');
 
+require('path');
+require('dotenv')
 
 module.exports = {
-  host: "db-4lhue.pub-cdb.ntruss.com",
-  username: "relay16",
-  password: "Boostcamp!",
-  port: "3306",
-  database: "relay16",
-  dialect: 'mysql'
+  port: process.env.SQL_PORT,
+  username: process.env.SQL_USERNAME,
+  password: process.env.SQL_PASSWORD,
+  database: process.env.SQL_DATABASE,
+  host: process.env.SQL_HOST,
+  dialect: "mysql",
 }
