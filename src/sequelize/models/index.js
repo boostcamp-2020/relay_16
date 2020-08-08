@@ -33,17 +33,17 @@ db.Sequelize = Sequelize;
 //table 재생성 및 초기화 할때만 주석 풀어주세요
 //!!!!!주의 내부 데이터 다 날라갑니다!! 조심하세요!!!!!!
 
-db.sequelize.sync({
-  force: true
-}).then(() => {
-  console.log(' Sync 성공')
-  console.log(' \n\n')
-}).catch((err) => {
-  console.log(' Sync 실패')
-  console.error(err);
-  console.log(' \n\n')
-  process.exit();
-})
+// db.sequelize.sync({
+//   force: true
+// }).then(() => {
+//   console.log(' Sync 성공')
+//   console.log(' \n\n')
+// }).catch((err) => {
+//   console.log(' Sync 실패')
+//   console.error(err);
+//   console.log(' \n\n')
+//   process.exit();
+// })
 
 
 module.exports = db;
