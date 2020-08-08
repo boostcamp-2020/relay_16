@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 #folder
 venv/
 venv
 .env
 node_modules
+=======
+.env
+node_modules
+>>>>>>> a250b565e4709fde94d30985b374c9b224640c2d
