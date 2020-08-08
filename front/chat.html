@@ -28,7 +28,7 @@
         overflow-y: auto;
         margin-top: 10px;
         border: 1px solid #b2bec3;
-        height: 400px;
+        height: 450px;
         width: 90%;
         border-radius: 7px;
         box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
@@ -44,15 +44,15 @@
             </div>
           </div>
       <div>
-          <div class="form-group" id="chatInput">
-              <div class="container">
-              <label for="exampleFormControlTextarea1">채팅 입력</label>
-              <textarea class="form-control" id="test" rows="2"></textarea>
-              <div class="col align-self-end">
-              <button type="submit" onclick="send()" class="btn btn-primary btn-lg">보내기</button>
-            </div>
-              </div>
-            </div>
+        <div class="form-group" id="chatInput" style="padding: 10px">
+          <label for="exampleFormControlTextarea1">채팅 입력</label>
+        <div class= "form-inline">
+          
+          <textarea class="form-control" id="test" rows="2" style="width: 358px; margin-right: 5px "></textarea>
+          <button type="submit" onclick="send()" style="float:right; height: 60px;" class="btn btn-primary btn-lg">보내기</button>
+          
+        </div>
+      </div>
       </div>
     </div>
   </div>
