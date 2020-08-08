@@ -4,7 +4,6 @@ const {
 } = require('./sequelize/models') // relay16/src/sequelize/model/index.js 
 
 
-console.log(process.env.SQL_PASSWORD)
 // 유저 삽입
 // user.create({
 //     id: "honux",
