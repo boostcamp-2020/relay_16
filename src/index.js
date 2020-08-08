@@ -11,6 +11,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 require('./routes')(app)
+
+//rendering
 app.set("view engine","ejs")
 app.set("views","../front")
 app.engine('html', require('ejs').renderFile);

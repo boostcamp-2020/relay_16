@@ -19,6 +19,18 @@ module.exports = (sequelize, DataTypes) => {
                 type:  DataTypes.STRING(255), 
                 allowNull: false
             },
+            character: {
+                type:  DataTypes.STRING(255), 
+                allowNull: true
+            },
+            job: {
+                type:  DataTypes.STRING(255), 
+                allowNull: true
+            },
+            hobby: {
+                type:  DataTypes.STRING(255), 
+                allowNull: true
+            },
         }, {
             // 테이블 옵션
             timestamps: true,
@@ -28,7 +40,10 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     user.associate = m => {
-        user.hasMany(m.userkeyword)
+        user.hasMany(m.userkeyword, {
+            foreignKey: 'userid',
+            onDelete: 'cascade'
+        })
     }
     return user
 };

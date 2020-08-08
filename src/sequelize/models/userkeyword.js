@@ -11,11 +11,6 @@ module.exports = (sequelize, DataTypes) => {
                 allowNull: false, // null 허용 설정
                 autoIncrement: true
             },
-            userid: {
-                type: DataTypes.STRING(255), // 데이터 타입 설정
-                primaryKey: true,
-                allowNull: false // null 허용 설정
-            },
             keyword: {
                 type:  DataTypes.STRING(255), 
                 allowNull: false
@@ -29,9 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     userkeyword.associate = m => {
-        userkeyword.belongsTo(m.user, {
-            foreignKey: 'userid'
-        })
+        userkeyword.belongsTo(m.user)
     }
     return userkeyword
 };
