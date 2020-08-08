@@ -22,9 +22,5 @@ module.exports = (sequelize, DataTypes) => {
             paranoid: true
         }
     );
-
-    userkeyword.associate = m => {
-        userkeyword.belongsTo(m.user)
-    }
     return userkeyword
 };
