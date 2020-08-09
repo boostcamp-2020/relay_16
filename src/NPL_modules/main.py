@@ -16,7 +16,7 @@ def leanrn_new_data() :
 
 def sentiment_predict(token, model):
     max_len = 30
-    with open('tokenizer.pickle', 'rb') as handle:
+    with open('NPL_modules/tokenizer.pickle', 'rb') as handle:
       tokenizer = pickle.load(handle)
     encoded = tokenizer.texts_to_sequences([token]) # 정수 인코딩
     pad_new = pad_sequences(encoded, maxlen = max_len) # 패딩
@@ -101,4 +101,14 @@ def main(json_input):
     return json.dumps(userInfo, ensure_ascii=False, indent="\t")
 
 
-main(sys.argv[1])
+main('{"name": "문창주", ' \
+           '"line": [' \
+           '"컴퓨터가 고장나서 코딩 못했다.",' \
+           '"머신러닝 이걸 왜한다고 해가지고",' \
+           ' "파이썬 쉽다면서요", ' \
+           '"새 키보드가 갖고 싶다", ' \
+           '"하루종일 아무것도 안했다",' \
+           '"아무것도 하기 싫다",' \
+           '"나는 잘 모르겠다", ' \
+           '"감정 분류가 잘안됩니다",' \
+           '"어제 강남에서 곱창먹었음"]}')
