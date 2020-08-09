@@ -6,9 +6,9 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 def load_rowdata():
-    train_data = pd.read_table('../../data/ratings_train.txt')
-    test_data = pd.read_table('../../data/ratings_test.txt')
-    stopwords = [line.rstrip() for line in open('../../data/korStopWords.txt', 'r', encoding='UTF8')]
+    train_data = pd.read_table('../data/ratings_train.txt')
+    test_data = pd.read_table('../data/ratings_test.txt')
+    stopwords = [line.rstrip() for line in open('../data/korStopWords.txt', 'r', encoding='UTF8')]
     print('# of train dataa : ', len(train_data))
     print('# of test dataa : ', len(train_data))
     print('# of test dataa : ', len(stopwords))

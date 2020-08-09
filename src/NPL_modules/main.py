@@ -25,15 +25,15 @@ def sentiment_predict(token, model):
 
 def main(json_input):
     input = json.loads(json_input)
-
-    stopwords = [line.rstrip() for line in open('../../data/korStopWords.txt', 'r', encoding='UTF8')]
+    
+    stopwords = [line.rstrip() for line in open('../data/korStopWords.txt', 'r', encoding='UTF8')]
     userInfo = {"job":None, "hobby":None, "character":None,"region":None,"pn":[],}
     #userInfo['name'] = input['name']
     ##leanrn_new_data()
 
     #dataa
-    pnModel = load_model('../../data/learnedmodel/pnModel.h5')
-    w2vModel = gensim.models.Word2Vec.load('../../data/learnedmodel/w2vModel.bin')
+    pnModel = load_model('../data/learnedmodel/pnModel.h5')
+    w2vModel = gensim.models.Word2Vec.load('../data/learnedmodel/w2vModel.bin')
     nounMap = {}
     positiveLine = 0
     negativeLine = 0
@@ -70,7 +70,7 @@ def main(json_input):
     print(json.dumps(input, ensure_ascii=False, indent="\t"))
     print('예상 PN : {0}, 비중 : {1:.2f}%'.format(userInfo['pn'][0], userInfo['pn'][1]))
 
-    with open('../../data/categories.txt', 'rb') as file:
+    with open('../data/categories.txt', 'rb') as file:
         categories = pickle.load(file)
 
     # 토큰으로 카테고리 분석

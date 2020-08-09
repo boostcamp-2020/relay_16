@@ -9,7 +9,7 @@ def create_model(X_train, y_train, vocab_size):
     model.add(LSTM(128))
     model.add(Dense(1, activation='sigmoid'))
     es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=4)
-    mc = ModelCheckpoint('../../data/learnedmodel/pnModel.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
+    mc = ModelCheckpoint('../data/learnedmodel/pnModel.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
     learn(model, X_train, y_train, es, mc)
 
 def learn(model, X_train, y_train, es, mc):
@@ -21,4 +21,4 @@ def learn(model, X_train, y_train, es, mc):
 
 def save(model):
     print('모델 저장...')
-    model.save('../../data/learnedmodel/pnModel.h5')
+    model.save('../data/learnedmodel/pnModel.h5')
