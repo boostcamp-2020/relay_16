@@ -31,7 +31,9 @@ module.exports = function(io) {
 
         /* 보낸 사람을 제외한 나머지 유저에게 메시지 전송 */
         socket.broadcast.emit('update', data);
+
         })
+
 
         /* 접속 종료 */
         socket.on('disconnect', function() {
@@ -40,8 +42,17 @@ module.exports = function(io) {
         // 나간 사람의 챗로그 데이터 출력(나중에 전송 및 DB저장으로 수정)
         console.log(CHATLOG[socket.name]);
         let chatlog = JSON.stringify(CHATLOG[socket.name]);
-        
 
+        let {spawn} = require('child_process');
+
+        //let py = spawn('python', ['./NPL_modules/main.py']);
+        let py = spawn('python', ['./NPL_modules/main.py']);
+
+        py.stdout.on('data', (data) => {
+            console.log(data.toString());
+        });
+
+        
         /* 나가는 사람을 제외한 나머지 유저에게 메시지 전송 */
         socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + '님이 나가셨습니다.'});
         })

@@ -5,6 +5,7 @@ import gensim
 from konlpy.tag import Okt
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import load_model
+import sys
 
 def leanrn_new_data() :
     #procseesing new dataa
@@ -111,5 +112,3 @@ main('{"name": "문창주", ' \
            '"나는 잘 모르겠다", ' \
            '"감정 분류가 잘안됩니다",' \
            '"어제 강남에서 곱창먹었음"]}')
-
-
