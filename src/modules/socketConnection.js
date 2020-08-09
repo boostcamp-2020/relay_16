@@ -1,6 +1,6 @@
 const CHATLOG = {};
 const db = require('../sequelize/models/index');
-const exec = require('child_process').execSync;
+const exec = require('child_process').execSync; // 파이썬 코드 읽는 모듈
 
 module.exports = function(io) {
     io.sockets.on('connection', function(socket) {
@@ -44,7 +44,7 @@ module.exports = function(io) {
         console.log(CHATLOG[socket.name]);
 
         // * 수정 필요 !!!! *
-        // 챗로그 자연어 처리 결과 db 저장 (자연어 처리 모듈과 연동 안돼서 임시 코드 저장)
+        // 챗로그 자연어 처리 결과 db 저장 (자연어 처리 모듈과 연동 xxxxxx)
         try {
             //let chatlog = "'" + JSON.stringify(CHATLOG[socket.name]) + "'";
             const result = save();
@@ -67,7 +67,7 @@ module.exports = function(io) {
 }
 
 function save(chatlog) {
-    // 파이썬 자연어 처리 모듈 실행 (현재 연동안돼는 상황입니다...)
+    // 파이썬 자연어 처리 모듈 실행 (현재 연동안됨...!!)
     //const py = exec('python3 ./NPL_modules/main.py ' + chatlog);
     const test = {
         "job": "프로그래머",
