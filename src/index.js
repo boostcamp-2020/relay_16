@@ -17,8 +17,10 @@ app.set("view engine","ejs")
 app.set("views","../front")
 app.engine('html', require('ejs').renderFile);
 
+app.use(express.static('../front'));
+
 app.get('/',function(req,res){
-    res.render('main.html')
+    res.render('login.html')
 })
 
 // 채팅서버 작업부분
