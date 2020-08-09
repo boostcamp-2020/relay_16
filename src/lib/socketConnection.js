@@ -41,7 +41,7 @@ module.exports = function(io) {
 
         // 나간 사람의 챗로그 데이터 출력(나중에 전송 및 DB저장으로 수정)
         console.log(CHATLOG[socket.name]);
-        let chatlog = JSON.stringify(CHATLOG[socket.name]);
+        let chatlog = "'" + JSON.stringify(CHATLOG[socket.name]) + "'";
 
         const exec = require('child_process').execSync;
 
