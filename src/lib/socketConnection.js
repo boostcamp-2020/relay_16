@@ -40,6 +40,7 @@ module.exports = function(io) {
         console.log(socket.name + '님이 나가셨습니다.')
 
         // 나간 사람의 챗로그 데이터 출력(나중에 전송 및 DB저장으로 수정)
+        /*
         console.log(CHATLOG[socket.name]);
         let chatlog = "'" + JSON.stringify(CHATLOG[socket.name]) + "'";
 
@@ -51,7 +52,7 @@ module.exports = function(io) {
         }
 
         console.log(test());
-        
+        */
         /* 나가는 사람을 제외한 나머지 유저에게 메시지 전송 */
         socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + '님이 나가셨습니다.'});
         })

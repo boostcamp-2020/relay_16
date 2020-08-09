@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from tensorflow.keras.layers import Embedding, Dense, LSTM
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
