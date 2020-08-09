@@ -26,7 +26,7 @@ app.get('/',function(req,res){
 // 채팅서버 작업부분
 app.use('/css', express.static('../front/css'))
 app.use('/js', express.static('../front/js'))
-const chat = require('./chat/index');
+const chat = require('./routes/chat/index');
 app.use('/chat', chat);
 
 /* Node.js 기본 내장 모듈 불러오기 */
@@ -38,6 +38,6 @@ server.listen(8080, function() {
     console.log('서버 실행 중..')
 })
 
-require('./lib/socketConnection')(io);
+require('./modules/socketConnection')(io);
 
 module.exports = app;
