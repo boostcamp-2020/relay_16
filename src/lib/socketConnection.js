@@ -43,14 +43,14 @@ module.exports = function(io) {
         console.log(CHATLOG[socket.name]);
         let chatlog = JSON.stringify(CHATLOG[socket.name]);
 
-        let {spawn} = require('child_process');
+        const exec = require('child_process').execSync;
 
-        let py = spawn('python3', ['./NPL_modules/main.py']);
+        function test() {
+            const py = exec('python3 ./NPL_modules/main.py ' + chatlog);
+            return py.toString("utf8");
+        }
 
-        py.stdout.on('data', (data) => {
-            console.log(data.toString());
-        });
-
+        console.log(test());
         
         /* 나가는 사람을 제외한 나머지 유저에게 메시지 전송 */
         socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + '님이 나가셨습니다.'});

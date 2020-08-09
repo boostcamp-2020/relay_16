@@ -1,4 +1,4 @@
-from src.NPL_modules import init, modeling
+import init, modeling
 import pickle
 import json
 import gensim
@@ -27,8 +27,8 @@ def main(json_input):
     input = json.loads(json_input)
 
     stopwords = [line.rstrip() for line in open('../../data/korStopWords.txt', 'r', encoding='UTF8')]
-    userInfo = {"name":"MCJ", "job":None, "hobby":None, "character":None,"region":None,"pn":[],}
-    userInfo['name'] = input['name']
+    userInfo = {"job":None, "hobby":None, "character":None,"region":None,"pn":[],}
+    #userInfo['name'] = input['name']
     ##leanrn_new_data()
 
     #dataa
@@ -101,14 +101,4 @@ def main(json_input):
     return json.dumps(userInfo, ensure_ascii=False, indent="\t")
 
 
-main('{"name": "문창주", ' \
-           '"line": [' \
-           '"컴퓨터가 고장나서 코딩 못했다.",' \
-           '"머신러닝 이걸 왜한다고 해가지고",' \
-           ' "파이썬 쉽다면서요", ' \
-           '"새 키보드가 갖고 싶다", ' \
-           '"하루종일 아무것도 안했다",' \
-           '"아무것도 하기 싫다",' \
-           '"나는 잘 모르겠다", ' \
-           '"감정 분류가 잘안됩니다",' \
-           '"어제 강남에서 곱창먹었음"]}')
+main(sys.argv[1])
