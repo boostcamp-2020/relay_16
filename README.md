@@ -1,6 +1,3 @@
 # relay_16
 
-|No|Desc|Link|
-|--|--|--|
-|1|라떼챌린지: 아이디어 취합|[링크](./01_Latte.md)|
-|2|라떼챌린지: 기획|[링크](./02_guide.md)|
+자세한 정보를 위해서 [Wiki](https://github.com/boostcamp-2020/relay_16/wiki)를 방문해 주세요!
