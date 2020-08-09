@@ -82,7 +82,7 @@ $(function () {
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
 		const data = { user_id: email, user_pwd: password };
-		const url = 'http://localhost:3000/api/login/signin';
+		const url = '/api/login/signin';
 		
 		fetch(`${url}`, {
 			method: 'POST',
