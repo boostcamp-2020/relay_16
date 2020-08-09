@@ -45,8 +45,7 @@ module.exports = function(io) {
 
         let {spawn} = require('child_process');
 
-        //let py = spawn('python', ['./NPL_modules/main.py']);
-        let py = spawn('python', ['./NPL_modules/main.py']);
+        let py = spawn('python3', ['./NPL_modules/main.py']);
 
         py.stdout.on('data', (data) => {
             console.log(data.toString());
