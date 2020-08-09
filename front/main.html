@@ -46,26 +46,26 @@
 		const userName = document.getElementById('userName');
 
 		//TODO: 서버로부터 데이터를 받아오는 아래 fetch 로직 구현시 제거.
-		userName.innerHTML = `OOO님 안녕하세요!`;
+		//userName.innerHTML = `OOO님 안녕하세요!`;
 
 		//TODO: URL 알맞게 변경.
-		const url = 'http://localhost:3000';
-		const token = localStorage.getItem('token');
+		const url = 'http://localhost:3000/api/login/getUser';
+		//const token = localStorage.getItem('token');
 
-		fetch(`${url}/users/:${token}`, {
+		fetch(`${url}`, {
 			method: 'GET',
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type' : 'applicaton/json'
 			}
 		}).then(response => response.json())
 			.then(response => {
 				userName.innerHTML = `
-					${response.message.user_name}님 안녕하세요!
+					${response.nickname}님 안녕하세요!
 				`;
 			});
 		
 		function goChatPage() {
-			location.href = "http://localhost:8080/chat";
+			location.href = "chat.html";
 		}
 	</script>
 </body>

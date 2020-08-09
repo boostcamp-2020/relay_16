@@ -82,9 +82,9 @@ $(function () {
 		const email = document.getElementById('email').value;
 		const password = document.getElementById('password').value;
 		const data = { user_id: email, user_pwd: password };
-		const url = 'http://localhost:3000';
+		const url = 'http://localhost:3000/api/login/signin';
 		
-		fetch(`${url}/login`, {
+		fetch(`${url}`, {
 			method: 'POST',
 			body: JSON.stringify(data),
 			headers: {
@@ -92,9 +92,10 @@ $(function () {
 			}
 		}).then(response => response.json())
 			.then(response => {
-				if(response.data !== null) {
+				console.log(response);
+				if(response !== null) {
 					// 로그인 성공
-					localStorage.setItem('token', response);
+					//localStorage.setItem('token', response);
 					location.href="main.html";
 				}
 				else {
