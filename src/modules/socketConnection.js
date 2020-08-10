@@ -1,4 +1,6 @@
 const CHATLOG = {};
+const db = require('../sequelize/models/index');
+const exec = require('child_process').execSync; // 파이썬 코드 읽는 모듈
 
 module.exports = function(io) {
     io.sockets.on('connection', function(socket) {
@@ -34,27 +36,49 @@ module.exports = function(io) {
 
         })
 
-
         /* 접속 종료 */
         socket.on('disconnect', function() {
         console.log(socket.name + '님이 나가셨습니다.')
 
-        // 나간 사람의 챗로그 데이터 출력(나중에 전송 및 DB저장으로 수정)
-        /*
+        // 나간 사람의 챗로그 데이터 출력
         console.log(CHATLOG[socket.name]);
-        let chatlog = "'" + JSON.stringify(CHATLOG[socket.name]) + "'";
 
-        const exec = require('child_process').execSync;
+        // * 수정 필요 !!!! *
+        // 챗로그 자연어 처리 결과 db 저장 (자연어 처리 모듈과 연동 xxxxxx)
+        try {
+            //let chatlog = "'" + JSON.stringify(CHATLOG[socket.name]) + "'";
+            const result = save();
+            console.log(result);
 
-        function test() {
-            const py = exec('python3 ./NPL_modules/main.py ' + chatlog);
-            return py.toString("utf8");
+            db.userkeyword.create({id: 0, keyword : result})
+            .then(res => {
+                console.log(res);
+                console.log('db 저장 완료');
+            })
+
+        } catch (err) {
+            console.log(err);
         }
-
-        console.log(test());
-        */
+        
         /* 나가는 사람을 제외한 나머지 유저에게 메시지 전송 */
         socket.broadcast.emit('update', {type: 'disconnect', name: 'SERVER', message: socket.name + '님이 나가셨습니다.'});
         })
     })
+}
+
+function save(chatlog) {
+    // 파이썬 자연어 처리 모듈 실행 (현재 연동안됨...!!)
+    //const py = exec('python3 ./NPL_modules/main.py ' + chatlog);
+    const test = {
+        "job": "프로그래머",
+        "hobby": "게임",
+        "character": "정서적",
+        "region": "서울",
+        "pn": [
+                "주로 부정적 대화",
+                85.71428571428571
+        ]
+    }
+    //return py.toString("utf8");
+    return JSON.stringify(test);
 }
