@@ -6,7 +6,6 @@ const toBase64 = file => new Promise((resolve, reject) => {
 });
 
 $(".my-register-validation").submit(async function () {
-
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const nickname = document.getElementById("nickname").value;
@@ -40,7 +39,7 @@ $(".my-register-validation").submit(async function () {
     is_boumeok: is_boumeok,
     is_earlybird: is_earlybird,
     like_drink: like_drink,
-	image : img
+	// image : img
   };
 
   const url = "/api/login/signup";
