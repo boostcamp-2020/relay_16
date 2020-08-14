@@ -23,6 +23,10 @@ app.get('/',function(req,res){
     res.render('login.html')
 })
 
+app.get('/register', function(req, res){
+    res.render('register.html')
+})
+
 // 채팅서버 작업부분
 app.use('/css', express.static('../front/css'))
 app.use('/js', express.static('../front/js'))
