@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>회원가입</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container h-100">
+			<div class="row justify-content-md-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="img/logo.png" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+							<h4 align="center" class="card-title">회원가입</h4>
+							<form method="POST" class="my-login-validation" novalidate="">
+
+								<div class="form-group">
+									<label for="email">이메일
+									</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="invalid-feedback">
+										Email is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">비밀번호
+										
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">학교 이름
+										
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+								<br/>
+								<h5 align="center" class="card-title">당신에 대해 더 알려주세요:)</h5>
+
+								<div class="form-group">
+									<label for="mbti">MBTI
+									</label>
+									<a href="https://www.16personalities.com/ko">확인하러 가기!</a>
+									<input id="mbti" type="mbti" class="form-control" name="mbti" value="" required autofocus>
+									<div class="invalid-feedback">
+										MBTI is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="movie">인생 영화
+									</label>
+									<input id="movie" type="movie" class="form-control" name="movie" value="" required autofocus>
+									<div class="invalid-feedback">
+										Movie is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="music">좋아하는 음악 장르
+									</label>
+									<input id="music" type="music" class="form-control" name="music" value="" required autofocus>
+									<div class="invalid-feedback">
+										Music is invalid
+									</div>
+								</div>
+
+								<div class="form-group">
+								<label>나는 민트초코가</label>
+								
+								<label>좋아요</label>
+								<input type="radio" name="mint" value="0" checked>
+								
+								<label>싫어요</label>
+								<input type="radio" name="mint" value="1">
+								</div>
+
+								<div class="form-group">
+								<label>탕수육은</label>
+								
+								<label>부먹</label>
+								<input type="radio" name="tang" value="0" checked>
+								
+								<label>찍먹</label>
+								<input type="radio" name="tang" value="1">
+								</div>
+
+								<div class="form-group">
+								<label>나는</label>
+								
+								<label>아침형 인간</label>
+								<input type="radio" name="achim" value="0" checked>
+								
+								<label>저녁형 인간</label>
+								<input type="radio" name="achim" value="1">
+								</div>
+
+								<div class="form-group">
+								<label>나는 술 마시는 게</label>
+								
+								<label>좋아요</label>
+								<input type="radio" name="drink" value="0" checked>
+								
+								<label>싫어요</label>
+								<input type="radio" name="drink" value="1">
+								</div>
+
+								<label>거주 지역</label>
+								<select id="area" name="area">
+									<option value="서울">서울</option>
+									<option value="경기도">경기도</option>
+									<option value="강원도">강원도</option>
+									<option value="충청도">충청도</option>
+									<option value="경상도">경상도</option>
+									<option value="전라도">전라도</option>
+									<option value="제주도">제주도</option>
+								</select>
+
+								<div class="form-group"></div>
+								<input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
+								<button class="browse-btn">인증하기</button>
+								
+								<div class="form-group">
+									<div class="custom-checkbox custom-control">
+										<input type="checkbox" name="remember" id="remember" class="custom-control-input">
+										
+									</div>
+								</div>
+
+
+								<div class="form-group m-0">
+									<button type="submit" class="btn btn-primary btn-block">
+										회원가입
+									</button>
+								</div>
+							</form>
+							
+						</div>
+					</div>
+					<div class="footer">
+						Copyright &copy; 2020 &mdash; 응답하라 그 때 우리!!
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/register.js"></script>
+</body>
+</html>
