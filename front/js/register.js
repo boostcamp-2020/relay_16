@@ -41,7 +41,7 @@ $(".my-register-validation").submit(async function () {
     is_boumeok: is_boumeok,
     is_earlybird: is_earlybird,
     like_drink: like_drink,
-	// image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
+	image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
   };
 
 
@@ -61,7 +61,7 @@ $(".my-register-validation").submit(async function () {
     .then((response) => {
     //   console.log(response);
       if (response !== null) {
-        alert("메인으로 넘어가자.....");
+        // alert("메인으로 넘어가자.....");
         // 성공
         //localStorage.setItem('token', response);
         window.location.href = "login.html";
