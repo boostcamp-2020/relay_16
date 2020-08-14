@@ -1,11 +1,12 @@
 const toBase64 = file => new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    reader.onload = () => resolve(reader.result.replace(/^data:image\/(png|jpg);base64,/, ""));
+    reader.onload = () => resolve(reader.result);
     reader.onerror = error => reject(error);
 });
 
 $(".my-register-validation").submit(async function () {
+  event.preventDefault();
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
   const nickname = document.getElementById("nickname").value;
@@ -22,7 +23,7 @@ $(".my-register-validation").submit(async function () {
   //const is_earlybird = document.getElementsByName("is_earlybird").value;
   //const like_drink = document.getElementsByName("like_drink").value;
 
-  const location = document.getElementById("location").value;
+  const area = document.getElementById("location").value;
 
   const img = await toBase64(
     document.querySelector("input[type=file]").files[0]
@@ -35,13 +36,15 @@ $(".my-register-validation").submit(async function () {
     mbti: mbti,
     movie: movie,
     music: music,
-    location: location,
+    location: area,
     is_mint: is_mint,
     is_boumeok: is_boumeok,
     is_earlybird: is_earlybird,
     like_drink: like_drink,
-	// image : img
+	// image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
   };
+
+
 
   const url = "/api/login/signup";
 
@@ -52,13 +55,16 @@ $(".my-register-validation").submit(async function () {
       "Content-Type": "application/json",
     },
   })
-    .then((response) => response.json())
     .then((response) => {
-      console.log(response);
+		response.json()
+	})
+    .then((response) => {
+    //   console.log(response);
       if (response !== null) {
+        alert("메인으로 넘어가자.....");
         // 성공
         //localStorage.setItem('token', response);
-        location.href = "main.html";
+        window.location.href = "login.html";
       } else {
         alert("회원가입에 실패했습니다.");
       }

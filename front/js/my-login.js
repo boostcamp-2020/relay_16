@@ -98,7 +98,7 @@ $(function () {
 				if(response !== null) {
 					// 로그인 성공
 					//localStorage.setItem('token', response);
-					location.href="main.html";
+					location.href="login.html";
 				}
 				else {
 					alert("아이디 혹은 패스워드가 일치하지 않습니다.")

@@ -1,6 +1,6 @@
 const request = require('request');
-​
-const callOCRAPI = function (imageurl, callback) {
+
+exports.callOCRAPI = function (imagedata, callback) {
     const sendData = {
         headers: {
             'Content-Type' : 'application/json',
@@ -10,10 +10,10 @@ const callOCRAPI = function (imageurl, callback) {
         body: JSON.stringify({
             "images": [
                 {
-                  "format": "png",
+                  "format": "jpg",
                   "name": "medium",
-                  "data": null,
-                  "url": imageurl
+                  "data" : imagedata,
+                  "url": null
                 }
               ],
               "lang": "ko",
@@ -23,7 +23,7 @@ const callOCRAPI = function (imageurl, callback) {
               "version": "V1"
         }),
     };
-​
+
     request.post(sendData, (err, res, result) => {
         callback(res, JSON.parse(result));
     })
