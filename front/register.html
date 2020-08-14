@@ -20,10 +20,10 @@
 					<div class="card fat">
 						<div class="card-body">
 							<h4 align="center" class="card-title">회원가입</h4>
-							<form method="POST" class="my-login-validation" novalidate="">
+							<form method="POST" class="my-register-validation" novalidate="">
 
 								<div class="form-group">
-									<label for="email">이메일
+									<label for="email">Id
 									</label>
 									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
 									<div class="invalid-feedback">
@@ -42,21 +42,30 @@
 								</div>
 
 								<div class="form-group">
-									<label for="password">학교 이름
+									<label for="password">닉네임
 										
 									</label>
-									<input id="password" type="password" class="form-control" name="password" required data-eye>
+									<input id="password" type="password" class="form-control" name="nickname" required data-eye>
 								    <div class="invalid-feedback">
-								    	Password is required
+								    	올바른 닉네임을 입력해주세요.
 							    	</div>
+								</div>
+
+								<div class="form-group">
+									<label for="school">학교 이름
+									</label>
+									<input id="school" type="school" class="form-control" name="school" value="" required autofocus>
+									<div class="invalid-feedback">
+										School is invalid
+									</div>
 								</div>
 								<br/>
 								<h5 align="center" class="card-title">당신에 대해 더 알려주세요:)</h5>
 
 								<div class="form-group">
-									<label for="mbti">MBTI
+									<label for="mbti">MBTI (예시: ENTJ) 
 									</label>
-									<a href="https://www.16personalities.com/ko">확인하러 가기!</a>
+									<a href="https://www.16personalities.com/ko">&nbsp&nbsp확인하러 가기!</a>
 									<input id="mbti" type="mbti" class="form-control" name="mbti" value="" required autofocus>
 									<div class="invalid-feedback">
 										MBTI is invalid
@@ -84,45 +93,45 @@
 								<div class="form-group">
 								<label>나는 민트초코가</label>
 								
-								<label>좋아요</label>
-								<input type="radio" name="mint" value="0" checked>
+								<label>좋아요&nbsp</label>
+								<input type="radio" name="is_mint" value="1" checked>
 								
-								<label>싫어요</label>
-								<input type="radio" name="mint" value="1">
+								<label>&nbsp싫어요&nbsp</label>
+								<input type="radio" name="is_mint" value="0">
 								</div>
 
 								<div class="form-group">
 								<label>탕수육은</label>
 								
-								<label>부먹</label>
-								<input type="radio" name="tang" value="0" checked>
+								<label>부먹&nbsp</label>
+								<input type="radio" name="is_boumeok" value="1" checked>
 								
-								<label>찍먹</label>
-								<input type="radio" name="tang" value="1">
+								<label>&nbsp찍먹&nbsp</label>
+								<input type="radio" name="is_boumeok" value="0">
 								</div>
 
 								<div class="form-group">
 								<label>나는</label>
 								
-								<label>아침형 인간</label>
-								<input type="radio" name="achim" value="0" checked>
+								<label>아침형 인간&nbsp</label>
+								<input type="radio" name="is_earlybird" value="1" checked>
 								
-								<label>저녁형 인간</label>
-								<input type="radio" name="achim" value="1">
+								<label>&nbsp저녁형 인간&nbsp</label>
+								<input type="radio" name="is_earlybird" value="0">
 								</div>
 
 								<div class="form-group">
 								<label>나는 술 마시는 게</label>
 								
-								<label>좋아요</label>
-								<input type="radio" name="drink" value="0" checked>
+								<label>좋아요&nbsp</label>
+								<input type="radio" name="like_drink" value="1" checked>
 								
-								<label>싫어요</label>
-								<input type="radio" name="drink" value="1">
+								<label>&nbsp싫어요&nbsp</label>
+								<input type="radio" name="like_drink" value="0">
 								</div>
 
-								<label>거주 지역</label>
-								<select id="area" name="area">
+								<label>거주 지역&nbsp</label>
+								<select id="location" name="location">
 									<option value="서울">서울</option>
 									<option value="경기도">경기도</option>
 									<option value="강원도">강원도</option>
@@ -133,6 +142,8 @@
 								</select>
 
 								<div class="form-group"></div>
+								<br/>
+								<h5 align="center" class="card-title">학교 인증 사진 업로드</h5>
 								<input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
 								<button class="browse-btn">인증하기</button>
 								
@@ -165,5 +176,16 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="js/register.js"></script>
+	<script>
+		const browseBtn = document.querySelector('.browse-btn');
+		const realInput = document.querySelector('#real-input');
+		
+		browseBtn.addEventListener('click',()=>{
+			realInput.click();
+		});
+
+		
+
+	</script>
 </body>
 </html>

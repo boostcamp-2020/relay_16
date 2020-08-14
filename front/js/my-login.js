@@ -77,6 +77,8 @@ $(function () {
 		});
 	});
 
+
+
 	$(".my-login-validation").submit(function () {
 		event.preventDefault();
 		const email = document.getElementById('email').value;
