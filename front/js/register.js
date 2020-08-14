@@ -31,6 +31,7 @@ $(".my-register-validation").submit(async function () {
   const data = {
     userid: email,
     password: password,
+    nickname: nickname,
     mbti: mbti,
     movie: movie,
     music: music,
