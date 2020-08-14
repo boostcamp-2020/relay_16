@@ -5,6 +5,10 @@ var router = express.Router();
 const signin = require('./signin');
 router.use('/signin',signin);
 
+//회원가입
+const signup = require('./signup');
+router.use('/signup',signup);
+
 //토큰 검증
 const getUser = require('./users');
 const verifyToken = require('../../../middlewares/token').verifyToken;
