@@ -44,6 +44,10 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'userid',
             onDelete: 'cascade'
         })
+        user.hasMany(m.userservey, {
+            foreignKey: 'userid',
+            onDelete: 'cascade'
+        })
     }
     return user
 };
