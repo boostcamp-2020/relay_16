@@ -7,6 +7,7 @@
 	<title>회원가입</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+	<style> label { display : inline; } </style>
 </head>
 
 <body class="my-login-page">
@@ -145,12 +146,10 @@
 								<br/>
 								<h5 align="center" class="card-title">학교 인증 사진 업로드</h5>
 								<input type="file" id="real-input" class="image_inputType_file" accept="img/*" >
-								<button class="browse-btn">인증하기</button>
-								
+								<br/><small> 학교이름이 들어간 사진을 업로드 해주세요 png 파일만 가능합니다.</small>
 								<div class="form-group">
 									<div class="custom-checkbox custom-control">
 										<input type="checkbox" name="remember" id="remember" class="custom-control-input">
-										
 									</div>
 								</div>
 
@@ -176,16 +175,5 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	<script src="js/register.js"></script>
-	<script>
-		const browseBtn = document.querySelector('.browse-btn');
-		const realInput = document.querySelector('#real-input');
-		
-		browseBtn.addEventListener('click',()=>{
-			realInput.click();
-		});
-
-		
-
-	</script>
 </body>
 </html>
