@@ -25,6 +25,8 @@ $(".my-register-validation").submit(async function () {
 
   const area = document.getElementById("location").value;
 
+  const school = document.getElementById("school").value;
+
   const img = await toBase64(
     document.querySelector("input[type=file]").files[0]
   );
@@ -41,7 +43,8 @@ $(".my-register-validation").submit(async function () {
     is_boumeok: is_boumeok,
     is_earlybird: is_earlybird,
     like_drink: like_drink,
-	image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
+    schoolname: school,
+	  image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
   };
 
 
@@ -55,18 +58,12 @@ $(".my-register-validation").submit(async function () {
       "Content-Type": "application/json",
     },
   })
-    .then((response) => {
-		response.json()
-	})
-    .then((response) => {
-    //   console.log(response);
-      if (response !== null) {
-        // alert("메인으로 넘어가자.....");
-        // 성공
-        //localStorage.setItem('token', response);
-        window.location.href = "login.html";
-      } else {
-        alert("회원가입에 실패했습니다.");
-      }
-    });
+  .then((response) => {
+    if (response.status === 200) {
+      alert("회원가입에 성공했습니다.");
+      window.location.href = "login.html";
+    } else {
+      alert("회원가입에 실패했습니다.");
+    }
+	});
 });

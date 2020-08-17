@@ -1,54 +1,45 @@
 const express = require('express');
 const router = express.Router();
-const ocrapi = require('../../../vision/ocr');
-//const crypto = require('crypto-promise');
+const ocr = require('../../../vision/ocr');
 const db = require('../../../sequelize/models/index');
-//const { password } = require('../../../sequelize/config');
 
-
-router.post('/', async (req, res, next) => {
+router.post('/', async (req, res) => {
     try {
         
-        let { userid, nickname, password, mbti, movie, music, location, is_mint, is_boumeok, is_earlybird, like_drink } = req.body;
-        console.log("this is signup.js", req)
-        if (!userid || !mbti || !movie || !music || !location || !is_mint || !is_boumeok || !is_earlybird || !like_drink) throw Error();
+        let { userid, nickname, password, mbti, movie, music, location, is_mint, is_boumeok, is_earlybird, like_drink, schoolname, image } = req.body;
+        if (!userid || !mbti || !movie || !music || !location || !is_mint || !is_boumeok || !is_earlybird || !like_drink || !schoolname || !image) throw Error();
 
-        //todo OCR로 전송 후 값 일치 확인
+        ocr.getTextFromImageData(image)
+        .then((result) => {
+            const allText = result.images[0].fields.reduce((acc, cur) => {
+                return acc + cur.inferText;
+            }, "");
 
-        await db.user.create({
-            id : userid,
-            nickname : nickname,
-            password : password,
-        })
-        .then( user =>{
-            // res.send(user)
-        })
-        .catch( err => {
-            console.log("usersERR = " + err)
-            res.sendStatus(500)
-        });
+            // 데모데이를 위한 주석 처리
+            // if (!allText.contain(schoolname)) throw new Error("IMAGE not contains school name");
 
-        await db.userservey.create({
-            userid : userid,
-            mbti : mbti,
-            movie : movie,
-            music : music, 
-            location : location, 
-            is_mint : is_mint,
-            is_boumeok : is_boumeok,
-            is_earlybird : is_earlybird,
-            like_drink : like_drink
-        })
-        .then(user =>{
-            // res.send(user)
-            res.redirect('/main.html');
+        }).then(
+            db.use.create({
+                id : userid,
+                nickname : nickname,
+                password : password,
+            })
+        ).then(
+            db.userservey.create({
+                userid : userid,
+                mbti : mbti,
+                movie : movie,
+                music : music, 
+                location : location, 
+                is_mint : is_mint,
+                is_boumeok : is_boumeok,
+                is_earlybird : is_earlybird,
+                like_drink : like_drink
+            })
+        ).then(user => {
+            res.sendStatus(200);
             res.end();
-        })
-        .catch( err => {
-            console.log("usersurveyERR = " + err)
-            res.sendStatus(500)
-        })
-
+        });
     } catch (err) {
         res.status(400).json(null);
     }
