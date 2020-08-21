@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
             // if (!allText.contain(schoolname)) throw new Error("IMAGE not contains school name");
 
         }).then(
-            db.use.create({
+            db.user.create({
                 id : userid,
                 nickname : nickname,
                 password : password,
