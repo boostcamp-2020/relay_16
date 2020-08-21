@@ -10,7 +10,8 @@
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <title>랜덤 채팅</title>
   <style>
-      #box {
+      /* chat css */
+      #chatbox {
         border: 1px solid;
         height: 600px;
         width: 500px;
@@ -33,17 +34,51 @@
         border-radius: 7px;
         box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
       }
+
+      /* match css */
+      #matchbox{
+        border: 1px solid;
+        height: 600px;
+        width: 250px;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        margin-top: 50px;
+        margin-left:20px;
+        padding: 10px;
+      }
+      
+      #matchTitle{
+        background-color : antiquewhite;
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .nickName{
+        background-color : rgb(34, 178, 94);
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
     </style>
   </head>
   <body>
-    <div class="row justify-content-md-center">
-    <div id="box">
+    <class class="row justify-content-md-center">
+    
+      <div id="chatbox">
         <div  class="row justify-content-md-center">
             <div id="talk">
       
             </div>
           </div>
       <div>
+
         <div class="form-group" id="chatInput" style="padding: 10px">
           <label for="exampleFormControlTextarea1">채팅 입력</label>
         <div class= "form-inline">
@@ -55,7 +90,17 @@
       </div>
       </div>
     </div>
+    <div id="matchbox">
+      <div id="matchTitle">매칭 리스트</div>
+        <!--dummy data-->
+        <div class="nickName">조승우 : 유사도 높음</div>
+        <div class="nickName">배두나 : 유사도 중간</div>
+        <div class="nickName">강진원 : 유사도 낮음</div>
+    </div>
+    </class>
   </div>
+
+
       <!-- chatting JS -->
       <script>
         //TODO: URL 알맞게 변경.

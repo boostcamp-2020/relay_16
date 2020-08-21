@@ -67,25 +67,74 @@
 									<label for="mbti">MBTI (예시: ENTJ) 
 									</label>
 									<a href="https://www.16personalities.com/ko">&nbsp&nbsp확인하러 가기!</a>
-									<input id="mbti" type="mbti" class="form-control" name="mbti" value="" required autofocus>
+									<select id="mbti" name="mbti">
+										<option value="1">ISTJ</option>
+										<option value="2">ISFJ</option>
+										<option value="3">INFJ</option>
+										<option value="4">INTJ</option>
+										<option value="5">ISTP</option>
+										<option value="6">ISFP</option>
+										<option value="7">INFP</option>
+										<option value="8">INTP</option>
+										<option value="9">ESTP</option>
+										<option value="10">ESFP</option>
+										<option value="11">ENFP</option>
+										<option value="12">ENTP</option>
+										<option value="13">ESTJ</option>
+										<option value="14">ESFJ</option>
+										<option value="15">ENFJ</option>
+										<option value="16">ENTJ</option>
+									</select>
+									<!-- <input id="mbti" type="mbti" class="form-control" name="mbti" value="" required autofocus> -->
 									<div class="invalid-feedback">
 										MBTI is invalid
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="movie">인생 영화
-									</label>
+									<label for="movie">좋아하는 영화 장르</label>
+									<select id="movie" name="movie">
+										<option value="1">판타지</option>
+										<option value="2">SF</option>
+										<option value="3">역사</option>
+										<option value="4">로맨스</option>
+										<option value="5">추리</option>
+										<option value="6">코미디</option>
+										<option value="7">공포</option>
+										<option value="8">스릴러</option>
+										<option value="9">스포츠</option>
+										<option value="10">뮤지컬</option>
+									</select>
+									
+									<!--
 									<input id="movie" type="movie" class="form-control" name="movie" value="" required autofocus>
+									-->
 									<div class="invalid-feedback">
 										Movie is invalid
 									</div>
 								</div>
 
 								<div class="form-group">
-									<label for="music">좋아하는 음악 장르
-									</label>
+									<label for="music">좋아하는 음악 장르</label>
+									<select id="music" name="music">
+										<option value="1">클래식</option>
+										<option value="2">재즈</option>
+										<option value="3">CCM</option>
+										<option value="4">팝</option>
+										<option value="5">발라드</option>
+										<option value="6">블루스</option>
+										<option value="7">힙합</option>
+										<option value="8">컨트리 음악</option>
+										<option value="9">포크 음악</option>
+										<option value="10">디스코</option>
+										<option value="11">락 음악</option>
+										<option value="12">전자 음악</option>
+										<option value="13">K-POP</option>
+										<option value="14">트로트</option>
+									</select>
+									<!--
 									<input id="music" type="music" class="form-control" name="music" value="" required autofocus>
+									-->
 									<div class="invalid-feedback">
 										Music is invalid
 									</div>
@@ -123,7 +172,7 @@
 
 								<div class="form-group">
 								<label>나는 술 마시는 게</label>
-								
+								 
 								<label>좋아요&nbsp</label>
 								<input type="radio" name="like_drink" value="1" checked>
 								
@@ -152,8 +201,6 @@
 										<input type="checkbox" name="remember" id="remember" class="custom-control-input">
 									</div>
 								</div>
-
-
 								<div class="form-group m-0">
 									<button type="submit" class="btn btn-primary btn-block">
 										회원가입

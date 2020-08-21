@@ -47,8 +47,6 @@ $(".my-register-validation").submit(async function () {
 	  image : img.replace(/^data:image\/(png|jpg|jpeg);base64,/, "")
   };
 
-
-
   const url = "/api/login/signup";
 
   fetch(`${url}`, {
@@ -59,7 +57,7 @@ $(".my-register-validation").submit(async function () {
     },
   })
   .then((response) => {
-    if (response.status === 200) {
+    if (response !== null) {
       alert("회원가입에 성공했습니다.");
       window.location.href = "login.html";
     } else {
